@@ -1,27 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<% layout ("/layouts/boilerplate.ejs") %>  
 <body>
-    <form action="/listings" method="post">
-        <input name="listing[title]" placeholder="Title">
-        <br><br>
-        <textarea name="listing[description]" placeholder="Description"></textarea>
-        <br>
-        <br>
-        <input type="text" name="listing[image]" placeholder="text">
-        <br><br>
-        <input type="number" name="listing[price]" placeholder="Price">
-        <br><br>
-
-        <input type="text" name="listing[location]" placeholder="Location">
-        <br><br>
-        <input type="text" name="listing[country]" placeholder="Country">
-        <br><br>
-        <button type="submit">Create Listing</button>
-    </form>
+    <div class="container mt-5">
+        <div class="card shadow-sm">
+            <div class="card-header text-center bg-light">
+                <h3>Create a New Listing</h3>
+            </div>
+            <div class="card-body bg-white">
+                <form action="/listings" method="post">
+                    <div class="form-group">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" class="form-control" name="listing[title]" id="title" placeholder="Enter listing title">
+                    </div>
+                    <div class="form-group">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea name="listing[description]" id="description" class="form-control" placeholder="Enter a detailed description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="image-url" class="form-label">Image URL</label>
+                        <input type="text" class="form-control" name="listing[image.url]" id="image-url" placeholder="Enter the image URL">
+                    </div>
+                    <div class="form-group">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="number" class="form-control" name="listing[price]" id="price" placeholder="Enter price">
+                    </div>
+                    <div class="form-group">
+                        <label for="location" class="form-label">Location</label>
+                        <input type="text" class="form-control" name="listing[location]" id="location" placeholder="Enter location">
+                    </div>
+                    <div class="form-group">
+                        <label for="country" class="form-label">Country</label>
+                        <input type="text" class="form-control" name="listing[country]" id="country" placeholder="Enter country">
+                    </div>
+                    <div class="form-group text-center mt-4">
+                        <button type="submit" class="btn btn-primary">Create Listing</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
-</html>

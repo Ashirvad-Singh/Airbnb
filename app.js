@@ -23,7 +23,8 @@ app.set('view engine', 'ejs');
 app.set("views", path.join(__dirname, 'views')); // Fixed the missing quotation mark
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
-
+app.engine("ejs", ejsmate);
+app.use(express.static(path.join(__dirname,"/public")));
 // Routes
 app.get("/", (req, res) => {
     res.send('Hello World!');
